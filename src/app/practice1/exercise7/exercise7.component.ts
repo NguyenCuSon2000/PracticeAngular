@@ -12,7 +12,7 @@ export class Exercise7Component implements OnInit {
     this.B = 0;
     this.C = 0;
     this.ALERT = "";
-   }
+  }
   A:number;
   B:number;
   C:number;
@@ -94,7 +94,7 @@ export class PhuongTrinh {
     this.B = B;
     this.C = C;
   }
-
+  
   giai() {
     let delta = this.B * this.B - 4 * this.A * this.C;
     if (delta < 0) {
