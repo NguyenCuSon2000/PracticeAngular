@@ -1,0 +1,27 @@
+
+<div class="container md-5">
+    <div class="card"></div>
+    <h2>Exercise 1</h2>
+    <div class="row">
+        <div class="col-sm-4">
+            <span>Input n: </span>
+        </div>
+        <div class="col-sm-4">
+            <input type="text"  [(ngModel)]="n" class="form-control">
+        </div>
+  
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <span>Input x: </span>
+        </div>
+        <div class="col-sm-4">
+            <input type="text"  [(ngModel)]="x" class="form-control">
+        </div>
+  
+    </div>
+    <div class="row text-center">
+        <button type="button" class="btn btn-primary" (click)="tinh()">Tính</button>
+    </div>
+    <h3>Kết quả: {{s}}</h3>
+  </div>
