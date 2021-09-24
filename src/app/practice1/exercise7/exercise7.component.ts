@@ -6,35 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./exercise7.component.css']
 })
 export class Exercise7Component implements OnInit {
-  
   constructor() {
-<<<<<<< HEAD
-    this.A = 0;
-    this.B = 0;
-    this.C = 0;
-    this.ALERT = "";
-  }
-=======
     // this.A = 0;
     // this.B = 0;
     // this.C = 0;
     // this.ALERT = "";
   }
-  // A:number;
-  // B:number;
-  // C:number;
-  // X1=0;
-  // X2=0;
-  // X3=0;
-  // X4=0;
-  // ALERT="";
   ngOnInit(): void {
-    
   }
 }
 
 export class PTB2 {
->>>>>>> Practice2
+
   A:number;
   B:number;
   C:number;
@@ -150,7 +133,7 @@ export class PTTP extends PTB2 {
     }
   }
 }
-<<<<<<< HEAD
+
 export class PhuongTrinh {
   A:number;
   B:number;
@@ -181,8 +164,7 @@ export class PhuongTrinh {
     }
   }
 }
-=======
 
-let x = new PTTP(5, 3, -26)
+
+let x = new PTTP(5, 3, -26);
 x.giaipttp();
->>>>>>> Practice2
