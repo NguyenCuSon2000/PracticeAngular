@@ -8,81 +8,149 @@ import { Component, OnInit } from '@angular/core';
 export class Exercise7Component implements OnInit {
   
   constructor() {
+<<<<<<< HEAD
     this.A = 0;
     this.B = 0;
     this.C = 0;
     this.ALERT = "";
   }
+=======
+    // this.A = 0;
+    // this.B = 0;
+    // this.C = 0;
+    // this.ALERT = "";
+  }
+  // A:number;
+  // B:number;
+  // C:number;
+  // X1=0;
+  // X2=0;
+  // X3=0;
+  // X4=0;
+  // ALERT="";
+  ngOnInit(): void {
+    
+  }
+}
+
+export class PTB2 {
+>>>>>>> Practice2
   A:number;
   B:number;
   C:number;
   X1=0;
   X2=0;
+  constructor(A:number, B:number, C:number) {
+    this.A = A;
+    this.B = B;
+    this.C = C;
+  }
+  
+  giai() {
+    let delta = this.B * this.B - 4 * this.A * this.C;
+    if (delta < 0) {
+      this.X1 = this.X2 = 0.0;
+      return 0;
+    }
+    else if (delta == 0) {
+      this.X1 = this.X2 = -this.B / (2 * this.A);
+      return 1;
+    }
+    else {
+      delta = Math.sqrt(delta);
+      this.X1 = (-this.B + delta) / (2 * this.A);
+      this.X2 = (-this.B - delta) / (2 * this.A);
+      return 2;
+    }
+  }
+}
+
+export class PTTP extends PTB2 {
   X3=0;
   X4=0;
-  ALERT="";
-  ngOnInit(): void {
+  constructor(A:number, B:number, C:number){
+    super(A,B,C);
   }
-  tinh() {
-    let pt = new PhuongTrinh(this.A, this.B, this.C);
+  public giaipttp() {
+    let pt = new PTB2(this.A, this.B, this.C);
     let giai = pt.giai();
     
-    if(giai == 0) {
-      this.ALERT = "Phương trình vô nghiệm";
-    } else if(giai == 1) {
-      if(pt.X1 < 0) {
-        this.ALERT = "Phương trình vô nghiệm";
-      } else if(pt.X1 == 0) {
-        this.ALERT = "Phương trình có 1 nghiệm";
+    if(giai == 0) {     // Xét vô nghiệm
+      console.log("Phương trình vô nghiệm");
+    } else if(giai == 1) {   // xét nghiệm kép
+      if(pt.X1 < 0) {       // X1 < 0
+        console.log("Phương trình vô nghiệm");
+      } else if(pt.X1 == 0) {  // X1 =0 
+        console.log("Phương trình có 1 nghiệm");
         this.X1 = 0;
-      } else {
-        this.ALERT = "Phương trình có 2 nghiệm";
+        console.log('x1='+this.X1);
+      } else {                  // X1 > 0
+        console.log("Phương trình có 2 nghiệm");
         this.X1 = Math.sqrt(pt.X1);
         this.X2 = -Math.sqrt(pt.X1);
+        console.log('x1='+this.X1);
+        console.log('x2='+this.X2);
       }
-    } else {
-      if(pt.X1 < 0) {
-        if(pt.X2 < 0) {
-          this.ALERT = "Phương trình vô nghiệm";
-        } else if(pt.X1 == 0) {
-          this.ALERT = "Phương trình có 1 nghiệm";
+    } else {              // Xét có 2 nghiệm pb
+      if(pt.X1 < 0) {              // X1 < 0
+        if(pt.X2 < 0) {            // X2 < 0
+          console.log("Phương trình vô nghiệm");
+        } else if(pt.X1 == 0) {    // X1 = 0, X2 = 0 
+          console.log("Phương trình có 1 nghiệm");
           this.X1 = 0;
-        } else {
-          this.ALERT = "Phương trình có 2 nghiệm";
+          console.log('x1='+this.X1);
+        } else {                 // X1 < 0, x2 > 0     
+          console.log("Phương trình có 2 nghiệm");
           this.X1 = Math.sqrt(pt.X2);
           this.X2 = -Math.sqrt(pt.X2);
+          console.log('x1='+this.X1);
+          console.log('x2='+this.X2);
         }
-      } else if(pt.X1 == 0) {
-        if(pt.X2 < 0) {
-          this.ALERT = "Phương trình có 1 nghiệm";
+      } else if(pt.X1 == 0) {       // X1 = 0
+        if(pt.X2 < 0) {             // X2 < 0
+          console.log("Phương trình có 1 nghiệm");
           this.X1 = 0;
-        } else {
-          this.ALERT = "Phương trình có 3 nghiệm";
+          console.log('x1='+this.X1);
+        } else {                    // x1 = 0, X2 > 0
+          console.log("Phương trình có 3 nghiệm");
           this.X1 = Math.sqrt(pt.X2);
           this.X2 = -Math.sqrt(pt.X2);
           this.X3 = 0;
+          console.log('x1='+this.X1);
+          console.log('x2='+this.X2);
+          console.log('x3='+this.X3);
         }
-      } else {
-        if(pt.X2 < 0) {
-          this.ALERT = "Phương trình có 2 nghiệm";
+      } else {   //                   X1 > 0 
+        if(pt.X2 < 0) {             //x2<0
+          console.log("Phương trình có 2 nghiệm");
           this.X1 = Math.sqrt(pt.X1);
           this.X2 = -Math.sqrt(pt.X1);
-        } else if(pt.X2 == 0) {
-          this.ALERT = "Phương trình có 3 nghiệm";
+          console.log('x1='+this.X1);
+          console.log('x2='+this.X2);
+        } else if(pt.X2 == 0) {      // X1 > 0, X2==0
+          console.log("Phương trình có 3 nghiệm");
           this.X1 = Math.sqrt(pt.X1);
           this.X2 = -Math.sqrt(pt.X1);
           this.X3 = 0;
-        } else {
-          this.ALERT = "Phương trình có 4 nghiệm";
+          console.log('x1='+this.X1);
+          console.log('x2='+this.X2);
+          console.log('x3='+this.X3);
+        } else {                     // X1 > 0, X2 >0
+          console.log("Phương trình có 4 nghiệm");
           this.X1 = Math.sqrt(pt.X1);
           this.X2 = -Math.sqrt(pt.X1);
           this.X3 = Math.sqrt(pt.X2);
           this.X4 = -Math.sqrt(pt.X2);
+          console.log('x1='+this.X1);
+          console.log('x2='+this.X2);
+          console.log('x3='+this.X3);
+          console.log('x4='+this.X4);
         }
       }
     }
   }
 }
+<<<<<<< HEAD
 export class PhuongTrinh {
   A:number;
   B:number;
@@ -113,3 +181,8 @@ export class PhuongTrinh {
     }
   }
 }
+=======
+
+let x = new PTTP(5, 3, -26)
+x.giaipttp();
+>>>>>>> Practice2
