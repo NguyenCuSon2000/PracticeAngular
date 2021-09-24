@@ -143,5 +143,5 @@ export class PTTP extends PTB2 {
   }
 }
 
-let x = new PTTP(5, 3, -26);
+let x = new PTTP(5, 3, -26)
 x.giaipttp();
