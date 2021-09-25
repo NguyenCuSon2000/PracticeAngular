@@ -8,29 +8,35 @@ import { Component, OnInit } from '@angular/core';
 export class Exercise8Component implements OnInit {
 
   constructor() {
-    this.a = 0;
-    this.b = 0;
-    this.c = 0;
-    this.h = 0;
+    // this.a = a;
+    // this.b = b;
+    // this.c = c;
+    // this.h = h;
   }
-  a:number;
-  b:number;
-  c:number;
-  h:number;
+  // a:number;
+  // b:number;
+  // c:number;
+  // h:number;
   kq=0;
   ALERT="";
   tinh(){
-    let x = new CHOP(this.a,this.b,this.c,this.h);
+    // let x = new CHOP(this.a,this.b,this.c,this.h);
+    // try {
+    //   let tt = x.TheTich();
+    //   this.kq = tt;
+    // } catch (error) {
+    //   this.ALERT = "Lỗi"+error;
+    // }
+  }
+  // let a=5, b=4, c=8, h=5;
+  ngOnInit(): void {
+    let x = new CHOP(5,4,8,5);
     try {
       let tt = x.TheTich();
-      this.kq = tt;
+       console.log("Thể tích hình chóp là: ",tt);
     } catch (error) {
       this.ALERT = "Lỗi"+error;
     }
-  }
-  // let a=5, b=4, c=8, h=5;
-  
-  ngOnInit(): void {
   }
 
 }
@@ -54,16 +60,18 @@ export class TamGiac {
 }
 export class CHOP extends TamGiac {
   private h:any;
-  kq=0;
+  kq:number;
   constructor(a:number,b:number,c:number,h:number) {
     super(a,b,c);
     this.h=h;
+  this.kq=0;
+
   }
-  public TheTich() {
+  public TheTich():number {
     try {
       let s = this.DienTich();
-      this.kq = 1.0/3*this.h*s;
-      return 1;
+      this.kq = 1/3*this.h*s;
+      return this.kq;
     } catch (error) {
       throw new Error(error + '');
     }
